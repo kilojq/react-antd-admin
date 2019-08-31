@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+
+import Layout from '@/layouts'
+import Unfound from './views/404'
+import MainRoutes from './routes'
+import { routeMap } from './routes/config'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" render={() => <Redirect to="/dashboard" push />} />
+        <Route exact path={ Object.keys(routeMap) }>
+          <Layout>
+            <MainRoutes></MainRoutes>
+          </Layout>
+        </Route>
+        <Route path="/404" component={Unfound}></Route>
+        <Route component={Unfound}></Route>
+      </Switch>
+    </Router>
   );
 }
 
