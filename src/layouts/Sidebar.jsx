@@ -53,10 +53,13 @@ export default withRouter(({ location, history }) => {
   }
 
   useEffect(() => {
-    history.listen(route => {
+    const unlistenHistory = history.listen(route => {
       handleClickMenu({ key: route.pathname })
       handleOpenChange(getLevelPathList(route.pathname))
     })
+    return () => {
+      unlistenHistory()
+    }
   }, [history])
   
   return (
