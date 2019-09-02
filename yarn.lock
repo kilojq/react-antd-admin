@@ -9743,6 +9743,11 @@ schema-utils@^2.0.0, schema-utils@^2.0.1:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
+screenfull@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-4.2.1.tgz#3245b7bc73d2b7c9a15bd8caaf6965db7cbc7f04"
+  integrity sha512-PLSp6f5XdhvjCCCO8OjavRfzkSGL3Qmdm7P82bxyU8HDDDBhDV3UckRaYcRa/NDNTYt8YBpzjoLWHUAejmOjLg==
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"

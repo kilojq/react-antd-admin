@@ -61,7 +61,7 @@ export default withRouter(({ location, history }) => {
   
   return (
     <Sider
-      className="sider"
+      className="sidebar"
       trigger={null}
       breakpoint="lg"
       style={{ overflowY: 'auto' }}

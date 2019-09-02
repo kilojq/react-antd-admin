@@ -1,0 +1,23 @@
+@import "./header.less";
+@import "./sidebar.less";
+@import "./footer.less";
+
+.item-hover(){
+  .ant-menu-item:hover,
+  .ant-menu-submenu:hover{
+    background-color: rgba(#fff, 0.1);
+  }
+}
+
+.layout{
+  height: 100%;
+  .item-hover();
+}
+
+.ant-menu-submenu-popup{
+  .item-hover();
+}
+
+.main{
+  position: relative;
+}

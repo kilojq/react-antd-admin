@@ -4,7 +4,7 @@ import { Layout} from 'antd'
 import Sidebar from './Sidebar'
 import Header from './Header'
 import Footer from './Footer'
-import './Layout.less'
+import './style/index.less'
 
 const { Content } = Layout
 
