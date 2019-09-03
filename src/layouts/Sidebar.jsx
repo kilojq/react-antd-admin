@@ -39,7 +39,7 @@ const renderSubMenuComponent = (route, parentPath = '') => {
 }
 
 export default withRouter(({ location, history }) => {
-  const menuCollapsed = useMappedState(state => state.menuCollapsed)
+  const menuCollapsed = useMappedState(state => state.app.menuCollapsed)
   const { pathname } = location;
   const [ selectedKey, setSelectedKey ] = useState(pathname)
   const [ openKeys, setOpenKeys ] = useState(getLevelPathList(pathname))
@@ -53,6 +53,9 @@ export default withRouter(({ location, history }) => {
   }
 
   useEffect(() => {
+    if (menuCollapsed) {
+      handleOpenChange([])
+    }
     const unlistenHistory = history.listen(route => {
       handleClickMenu({ key: route.pathname })
       handleOpenChange(getLevelPathList(route.pathname))
@@ -60,7 +63,7 @@ export default withRouter(({ location, history }) => {
     return () => {
       unlistenHistory()
     }
-  }, [history])
+  }, [menuCollapsed, history])
   
   return (
     <Sider

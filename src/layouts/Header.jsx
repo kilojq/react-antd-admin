@@ -13,9 +13,9 @@ const { SubMenu, Item } = Menu
 export default withRouter(({ location }) => {
   // console.log(location)
   const pathList = getLevelPathList(location.pathname)
-  const menuCollapsed = useMappedState(state => state.menuCollapsed)
+  const menuCollapsed = useMappedState(state => state.app.menuCollapsed)
   const dispatch = useDispatch()
-  const checkMenuState = () => {
+  const switchMenuState = () => {
     dispatch({ type: 'SWITCH_MENU_STATE', menuCollapsed: !menuCollapsed })
   }
 
@@ -29,7 +29,7 @@ export default withRouter(({ location }) => {
         <Icon
           className="header__menu-switch"
           type={ menuCollapsed ? "menu-unfold" : "menu-fold" }
-          onClick={ checkMenuState }
+          onClick={ switchMenuState }
         />
         <Breadcrumb className="header__breadcrumb">
           <Breadcrumb.Item>

@@ -8,6 +8,7 @@ export default function(state, action) {
       menuCollapsed: false
     }
   }
+
   switch (action.type) {
     case UPDATE_THEME_COLOR: return { ...state, themeColor: action.themeColor };
     case SWITCH_MENU_STATE: return { ...state, menuCollapsed: action.menuCollapsed };
