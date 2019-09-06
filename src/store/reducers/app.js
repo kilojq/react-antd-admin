@@ -1,5 +1,4 @@
-const UPDATE_THEME_COLOR = 'UPDATE_THEME_COLOR'
-const SWITCH_MENU_STATE = 'SWITCH_MENU_STATE'
+import { UPDATE_THEME_COLOR, SWITCH_MENU_STATE } from '../ActionTypes'
 
 export default function(state, action) {
   if (!state) {
